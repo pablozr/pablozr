@@ -30,8 +30,8 @@ Hey there! I'm **Pablo Farina**, a passionate **Information Systems student** dr
 ## 📊 GitHub Profile Stats
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=SeuUsuario&show_icons=true&theme=radical" width="48%"/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=SeuUsuario&layout=compact&theme=radical" width="48%"/>
+  <img src="https://github-readme-stats.vercel.app/api?username=pablozr&show_icons=true&theme=radical" width="48%"/>
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=pablozr&layout=compact&theme=radical" width="48%"/>
 </div>
 
 ---
