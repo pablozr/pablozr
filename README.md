@@ -1,6 +1,6 @@
 ## 🧑‍💻 About Me
 
-Hey there! I'm **[Pablo]**, a passionate **Information Systems student** driven by curiosity and the pursuit of knowledge. I thrive in the world of **backend development**, crafting robust and scalable systems. My main expertise is in **Java**, but I'm always exploring new technologies, currently diving into **SpringBoot** and DevOps.
+Hey there! I'm **Pablo Farina**, a passionate **Information Systems student** driven by curiosity and the pursuit of knowledge. I thrive in the world of **backend development**, crafting robust and scalable systems. My main expertise is in **Java**, but I'm always exploring new technologies, currently diving into **SpringBoot** and DevOps.
 
 💡 I love solving complex problems and turning abstract ideas into functional code.<br>
 🔭 Currently, I’m working on improving my **Spring Boot and microservices** knowledge.<br>
@@ -44,5 +44,3 @@ Hey there! I'm **[Pablo]**, a passionate **Information Systems student** driven 
 </p>
 
 ---
-
-#### `Goodbye, stranger. See you in the wired...`
