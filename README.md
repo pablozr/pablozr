@@ -42,6 +42,7 @@ Hey there! I'm **Pablo Farina**, a passionate **Information Systems student** dr
 <p align="center">
   <a href="www.linkedin.com/in/pablo-de-araújo-farina-893a8126b"><img src="https://img.shields.io/badge/LinkedIn-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
   <a href="mailto:pablo.farina28@outlook.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
+  <a href="https://pablozr.github.io/portifolio/"></a>
 </p>
 
 ---
