@@ -1,4 +1,4 @@
-<div align="center" style="background: url('https://raw.githubusercontent.com/pablozr/pablozr/main/assets/2917197433_preview_1199505.jpg'); background-size: cover; padding: 20px; border-radius: 10px; box-shadow: 0 0 15px #00ff00; color: #00ff00;">
+<div align="center" style="background: url('https://raw.githubusercontent.com/pablozr/pablozr/main/2917197433_preview_1199505.jpg'); background-size: cover; padding: 20px; border-radius: 10px; box-shadow: 0 0 15px #00ff00; color: #00ff00;">
   <h1 style="font-family: 'Courier New', monospace; text-shadow: 0 0 10px #00ff00, 0 0 20px #ff00ff, 0 0 30px #00ff00; letter-spacing: 2px;">
     Pablo Farina
   </h1>
