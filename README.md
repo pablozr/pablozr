@@ -1,6 +1,6 @@
 <div align="center" style="background: url('https://raw.githubusercontent.com/pablozr/pablozr/main/2917197433_preview_1199505.jpg'); background-size: cover; padding: 20px; border-radius: 10px; box-shadow: 0 0 15px #00ff00; color: #00ff00;">
   <h1 style="font-family: 'Courier New', monospace; text-shadow: 0 0 10px #00ff00, 0 0 20px #ff00ff, 0 0 30px #00ff00; letter-spacing: 2px;">
-    Pablo Farina
+    Pablo 
   </h1>
   <p style="font-family: 'Courier New', monospace; font-size: 18px; text-shadow: 0 0 5px #00ff00; font-weight: bold;">Java Backend Developer | Spring Boot Expert</p>
   <img src="https://readme-typing-svg.herokuapp.com?font=IBM+Plex+Mono&size=24&color=00FF00&center=true&vCenter=true&width=700&lines=Backend+Developer;Java+Spring+Boot+Specialist;Exploring+DevOps,+Microservices+and+Cloud" alt="Typing SVG" style="margin: 10px 0;" />
