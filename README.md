@@ -1,5 +1,5 @@
 <div align="center" style="background: linear-gradient(135deg, #1a1b27 0%, #0d1117 100%); padding: 40px; border-radius: 20px; box-shadow: 0 0 40px #00ff00, inset 0 0 20px rgba(0, 255, 0, 0.1); border: 2px solid #00ff00;">
-  <h1 style="font-family: 'Fira Code', 'Courier New', monospace; text-shadow: 0 0 20px #00ff00, 0 0 40px #00ffff, 0 0 60px #00ff00; letter-spacing: 4px; font-size: 3.5em; margin-bottom: 10px; animation: glow 2s ease-in-out infinite alternate;">
+  <h1 style="font-family: 'Fira Code', 'Courier New', monospace; text-shadow: 0 0 20px #00ff00, 0 0 40px #00ffff, 0 0 60px #00ff00; letter-spacing: 4px; font-size: 3.5em; margin-bottom: 10px; color: #00ff00;">
     Pablo Farina
   </h1>
   <p style="font-family: 'Fira Code', monospace; font-size: 24px; text-shadow: 0 0 10px #00ffff; font-weight: bold; margin: 0 0 20px 0; color: #00ffff;">
@@ -7,8 +7,6 @@
   </p>
   <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=22&duration=3000&pause=1000&color=00FF00&center=true&vCenter=true&width=800&lines=Backend+Developer+with+Java+%26+Spring+Boot;Frontend+Developer+with+TypeScript+%26+React;Next.js+%26+Modern+Web+Technologies;Exploring+Cloud+Architecture+%26+DevOps;Building+Scalable+Microservices" alt="Typing SVG" style="margin: 20px 0;" />
 </div>
-
-
 
 ## 💻 Sobre Mim
 
@@ -87,7 +85,7 @@
           <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white" />
         </div>
         <br/>
-        <a href="https://github.com/pablozr/sistema-transacoes"><img src="https://img.shields.io/badge/Ver_Projeto-00ff00?style=for-the-badge&logo=github&logoColor=black" /></a>
+        <a href="https://github.com/pablozr/banksystem"><img src="https://img.shields.io/badge/Ver_Projeto-00ff00?style=for-the-badge&logo=github&logoColor=black" /></a>
       </td>
       <td style="background: linear-gradient(135deg, #1a1b27 0%, #0d1117 100%); padding: 25px; border-radius: 15px; border: 2px solid #00ffff; box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);">
         <h3 style="color: #00ffff; margin-top: 0;">💹 UniFinanceV2</h3>
@@ -115,12 +113,13 @@
         <a href="https://github.com/pablozr/esgotoserver"><img src="https://img.shields.io/badge/Ver_Projeto-ff00ff?style=for-the-badge&logo=github&logoColor=black" /></a>
       </td>
       <td style="background: linear-gradient(135deg, #1a1b27 0%, #0d1117 100%); padding: 25px; border-radius: 15px; border: 2px solid #ffff00; box-shadow: 0 0 20px rgba(255, 255, 0, 0.3);">
-        <h3 style="color: #ffff00; margin-top: 0;">⚔️ Elden Ring Builds</h3>
-        <p style="color: #00ff00;">Ferramenta interativa para otimização de builds com algoritmos inteligentes</p>
+        <h3 style="color: #ffff00; margin-top: 0;">⚔️ Elden Ring Builds API</h3>
+        <p style="color: #00ff00;">API REST que recomenda builds otimizadas baseado no boss que você está enfrentando</p>
         <div>
-          <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black" />
-          <img src="https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white" />
-          <img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white" />
+          <img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=java&logoColor=white" />
+          <img src="https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat-square&logo=spring&logoColor=white" />
+          <img src="https://img.shields.io/badge/REST_API-005571?style=flat-square&logo=rest&logoColor=white" />
+          <img src="https://img.shields.io/badge/PostgreSQL-316192?style=flat-square&logo=postgresql&logoColor=white" />
         </div>
         <br/>
         <a href="https://github.com/pablozr/elden-ring-builds"><img src="https://img.shields.io/badge/Ver_Projeto-ffff00?style=for-the-badge&logo=github&logoColor=black" /></a>
