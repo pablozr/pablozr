@@ -1,10 +1,10 @@
 <img src="assets/header.svg" alt="Pablo Farina. Backend, arquitetura, verificação de coding agents e pesquisa. UNIRIO, Rio de Janeiro." width="100%" />
 
-<p align="center"><code>
-<a href="https://www.linkedin.com/in/pablo-de-araujo-farina-893a8126b">linkedin</a> ·
-<a href="mailto:pablo.farina28@outlook.com">pablo.farina28@outlook.com</a> ·
-<a href="https://github.com/pablozr">github</a>
-</code></p>
+<p align="center">
+  <a href="https://www.linkedin.com/in/pablo-de-araujo-farina-893a8126b"><img src="assets/badges/linkedin.svg" alt="LinkedIn" height="40" /></a>
+  <a href="mailto:pablo.farina28@outlook.com"><img src="assets/badges/email.svg" alt="Email: pablo.farina28@outlook.com" height="40" /></a>
+  <a href="https://github.com/pablozr"><img src="assets/badges/github.svg" alt="GitHub: pablozr" height="40" /></a>
+</p>
 
 <img src="assets/layers/01.svg" alt="Layer:01 EGO, quem escreve" width="100%" />
 
@@ -51,5 +51,3 @@ O que me interessa de verdade é o que acontece quando dá errado: duas requisi�
 </details>
 
 <img src="assets/footer.svg" alt="close the world, open the nExt" width="100%" />
-
-<p align="right"><sub><code>scripts/gen_assets.py</code></sub></p>

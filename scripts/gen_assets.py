@@ -20,6 +20,7 @@ import os, math
 OUT = "assets"
 os.makedirs(os.path.join(OUT, "nodes"), exist_ok=True)
 os.makedirs(os.path.join(OUT, "layers"), exist_ok=True)
+os.makedirs(os.path.join(OUT, "badges"), exist_ok=True)
 
 BG, FG, DIM, RED, FAINT, PANEL = "#0A0A0A", "#E6E1D3", "#8C877C", "#C8102E", "#2A2825", "#121110"
 MONO = ("ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,"
@@ -397,6 +398,24 @@ def footer():
     return screen(H, body, "close the world, open the nExt", defs=sd)
 
 
+# ── badges das redes ─────────────────────────────────────────────────
+def badge(label, value):
+    h = 40
+    lx = 34 + len(label) * 7.6 + 12
+    w = lx + len(value) * 7.8 + 18
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{w:.0f}" height="{h}" viewBox="0 0 {w:.0f} {h}" role="img" aria-label="{esc(label)}: {esc(value)}">
+  <defs>{SCAN}</defs>
+  <rect width="{w:.0f}" height="{h}" fill="{BG}"/>
+  <rect x="0.5" y="0.5" width="{w-1:.0f}" height="{h-1}" fill="none" stroke="{FAINT}"/>
+  <rect x="16" y="17" width="6" height="6" fill="{RED}">
+    <animate attributeName="opacity" values="1;1;0.2;1" keyTimes="0;0.85;0.9;1" dur="4s" repeatCount="indefinite"/>
+  </rect>
+  <text x="34" y="24.5" font-family="{MONO}" font-size="11" fill="{DIM}" letter-spacing="1">{esc(label)}</text>
+  <text x="{lx:.0f}" y="24.5" font-family="{MONO}" font-size="12.5" fill="{FG}">{esc(value)}</text>
+  <rect width="{w:.0f}" height="{h}" fill="url(#scan)"/>
+</svg>'''
+
+
 if __name__ == "__main__":
     print("gerando assets:")
     write("header.svg", header())
@@ -404,6 +423,9 @@ if __name__ == "__main__":
     write("psyche.svg", psyche())
     write("landscape.svg", landscape())
     write("footer.svg", footer())
+    write("badges/linkedin.svg", badge("linkedin", "pablo-farina"))
+    write("badges/email.svg", badge("mail", "pablo.farina28@outlook.com"))
+    write("badges/github.svg", badge("github", "pablozr"))
     for num, word, jp, note in [("01", "EGO", "自我", "quem escreve"),
                                 ("02", "PSYCHE", "精神", "como eu penso"),
                                 ("03", "PROTOCOL", "プロトコル", "o que eu construí"),
