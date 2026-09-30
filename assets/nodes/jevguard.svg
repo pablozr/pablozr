@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 880 206"
+     preserveAspectRatio="xMidYMid meet" role="img" aria-label="JevGuard: Verifica o diff que um agente acabou de produzir contra as políticas do repositório. Cada regra recebe um julgamento semântico e um gate determinístico local devolve o veredito: PASS, WARN ou FAIL.">
+  <defs><pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="4" height="1" fill="#000" opacity="0.35"/></pattern>
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="3"/>
+      <feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.06 0"/>
+    </filter></defs>
+  <rect width="880" height="206" fill="#0A0A0A"/>
+  <rect x="0.5" y="0.5" width="879" height="205" fill="none" stroke="#2A2825"/>
+  <text x="28" y="34" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'DejaVu Sans Mono','Liberation Mono',monospace" font-size="10.5" fill="#8C877C">node://pablozr/JevGuard</text>
+  <path d="M580,46.0 L586,43.5 L592,42.7 L598,46.0 L604,44.9 L610,45.0 L616,42.6 L622,43.6 L628,46.7 L634,46.1 L640,44.5 L646,33.9 L652,45.9 L658,45.7 L664,42.6 L670,46.1 L676,42.0 L682,41.9 L688,45.1 L694,42.0 L700,45.2 L706,45.6 L712,44.0 L718,48.4 L724,60.5 L730,41.8 L736,44.0 L742,45.6 L748,42.6 L754,45.6 L760,45.2 L766,42.6 L772,45.7 L778,45.1 L784,43.9 L790,42.4 L796,35.6 L802,43.2 L808,42.2 L814,45.8 L820,42.1 L826,44.3 L832,43.4 L838,44.9 L844,45.1 L850,42.9" fill="none" stroke="#8C877C" stroke-width="1" opacity="0.7"/><circle r="3" fill="#C8102E"><animateMotion dur="5s" repeatCount="indefinite" path="M580,46.0 L586,43.5 L592,42.7 L598,46.0 L604,44.9 L610,45.0 L616,42.6 L622,43.6 L628,46.7 L634,46.1 L640,44.5 L646,33.9 L652,45.9 L658,45.7 L664,42.6 L670,46.1 L676,42.0 L682,41.9 L688,45.1 L694,42.0 L700,45.2 L706,45.6 L712,44.0 L718,48.4 L724,60.5 L730,41.8 L736,44.0 L742,45.6 L748,42.6 L754,45.6 L760,45.2 L766,42.6 L772,45.7 L778,45.1 L784,43.9 L790,42.4 L796,35.6 L802,43.2 L808,42.2 L814,45.8 L820,42.1 L826,44.3 L832,43.4 L838,44.9 L844,45.1 L850,42.9"/></circle>
+  <text x="26" y="76" font-family="'Helvetica Neue',Helvetica,Arial,'Liberation Sans',sans-serif" font-size="30" fill="#E6E1D3" letter-spacing="1">JevGuard</text>
+  <text x="28" y="96" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'DejaVu Sans Mono','Liberation Mono',monospace" font-size="11" fill="#C8102E">motor de política semântica para coding agents</text>
+  <text x="28" y="118" font-family="'Helvetica Neue',Helvetica,Arial,'Liberation Sans',sans-serif" font-size="13.5" fill="#E6E1D3">Verifica o diff que um agente acabou de produzir contra as políticas do repositório.</text><text x="28" y="138" font-family="'Helvetica Neue',Helvetica,Arial,'Liberation Sans',sans-serif" font-size="13.5" fill="#E6E1D3">Cada regra recebe um julgamento semântico e um gate determinístico local devolve o</text><text x="28" y="158" font-family="'Helvetica Neue',Helvetica,Arial,'Liberation Sans',sans-serif" font-size="13.5" fill="#E6E1D3">veredito: PASS, WARN ou FAIL.</text>
+  <text x="28" y="184" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'DejaVu Sans Mono','Liberation Mono',monospace" font-size="10.5" fill="#8C877C" xml:space="preserve">[typescript]  [cli]  [policy-engine]</text>
+  <rect width="880" height="206" fill="url(#scan)"/>
+</svg>

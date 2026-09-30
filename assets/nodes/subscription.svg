@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 432 216"
+     preserveAspectRatio="xMidYMid meet" role="img" aria-label="subscription-monolith: Regras separadas por domínio, persistência relacional e comunicação assíncrona entre os serviços.">
+  <defs><pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="4" height="1" fill="#000" opacity="0.35"/></pattern>
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="3"/>
+      <feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.06 0"/>
+    </filter></defs>
+  <rect width="432" height="216" fill="#0A0A0A"/>
+  <rect x="0.5" y="0.5" width="431" height="215" fill="none" stroke="#2A2825"/>
+  <text x="28" y="34" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'DejaVu Sans Mono','Liberation Mono',monospace" font-size="10.5" fill="#8C877C">node://pablozr/subscription-monolith</text>
+  <path d="M282,43.8 L288,42.0 L294,45.9 L300,42.1 L306,43.5 L312,41.8 L318,42.4 L324,45.1 L330,45.8 L336,46.1 L342,41.9 L348,45.9 L354,42.5 L360,43.0 L366,52.7 L372,45.3 L378,45.8 L384,42.0 L390,46.0 L396,42.2 L402,43.9" fill="none" stroke="#8C877C" stroke-width="1" opacity="0.7"/><circle r="3" fill="#C8102E"><animateMotion dur="5s" repeatCount="indefinite" path="M282,43.8 L288,42.0 L294,45.9 L300,42.1 L306,43.5 L312,41.8 L318,42.4 L324,45.1 L330,45.8 L336,46.1 L342,41.9 L348,45.9 L354,42.5 L360,43.0 L366,52.7 L372,45.3 L378,45.8 L384,42.0 L390,46.0 L396,42.2 L402,43.9"/></circle>
+  <text x="26" y="76" font-family="'Helvetica Neue',Helvetica,Arial,'Liberation Sans',sans-serif" font-size="22" fill="#E6E1D3" letter-spacing="1">subscription-monolith</text>
+  <text x="28" y="96" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'DejaVu Sans Mono','Liberation Mono',monospace" font-size="11" fill="#C8102E">gestão de assinaturas</text>
+  <text x="28" y="118" font-family="'Helvetica Neue',Helvetica,Arial,'Liberation Sans',sans-serif" font-size="13.5" fill="#E6E1D3">Regras separadas por domínio, persistência</text><text x="28" y="138" font-family="'Helvetica Neue',Helvetica,Arial,'Liberation Sans',sans-serif" font-size="13.5" fill="#E6E1D3">relacional e comunicação assíncrona entre os</text><text x="28" y="158" font-family="'Helvetica Neue',Helvetica,Arial,'Liberation Sans',sans-serif" font-size="13.5" fill="#E6E1D3">serviços.</text>
+  <text x="28" y="194" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'DejaVu Sans Mono','Liberation Mono',monospace" font-size="10.5" fill="#8C877C" xml:space="preserve">[fastapi]  [postgresql]  [rabbitmq]</text>
+  <rect width="432" height="216" fill="url(#scan)"/>
+</svg>
