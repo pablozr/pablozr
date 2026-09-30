@@ -204,14 +204,14 @@ def header():
   {blots(660, 452, 13, 60, 11, rmax=5)}
 
   <text x="40" y="318" font-family="{MONO}" font-size="12" fill="{RED}" letter-spacing="3">LAYER:00</text>
-  <text x="40" y="370" font-family="{SANS}" font-size="56" fill="{FG}" letter-spacing="3">pablo farina</text>
-  {glitch("pablo farina", 40, 370, 56, "gx", period=8, spacing=3)}
+  <text x="40" y="370" font-family="{SANS}" font-size="56" fill="{FG}" letter-spacing="3">Pablo Farina</text>
+  {glitch("Pablo Farina", 40, 370, 56, "gx", period=8, spacing=3)}
   {''.join(lines)}
   <rect x="40" y="432" width="360" height="1" fill="{FAINT}"/>
   <text x="40" y="454" font-family="{MONO}" font-size="10.5" fill="{DIM}" letter-spacing="1">unirio · sistemas de informação · rio de janeiro</text>
   <text x="846" y="326" font-family="{JP}" font-size="13" fill="{DIM}" text-anchor="middle">{vert}</text>
 '''
-    return screen(H, body, "pablo farina. Backend, arquitetura, verificação de coding agents e pesquisa. "
+    return screen(H, body, "Pablo Farina. Backend, arquitetura, verificação de coding agents e pesquisa. "
                   "UNIRIO, Rio de Janeiro.", defs=sd)
 
 

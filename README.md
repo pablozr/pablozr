@@ -1,4 +1,4 @@
-<img src="assets/header.svg" alt="pablo farina. Backend, arquitetura, verificação de coding agents e pesquisa. UNIRIO, Rio de Janeiro." width="100%" />
+<img src="assets/header.svg" alt="Pablo Farina. Backend, arquitetura, verificação de coding agents e pesquisa. UNIRIO, Rio de Janeiro." width="100%" />
 
 <p align="center"><code>
 <a href="https://www.linkedin.com/in/pablo-de-araujo-farina-893a8126b">linkedin</a> ·
