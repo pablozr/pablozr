@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 432 216"
+     preserveAspectRatio="xMidYMid meet" role="img" aria-label="self-checkout-monolith: Carrinho anônimo por mesa em Redis, checkout Stripe idempotente, reset de senha assíncrono com worker SMTP e cache por produto.">
+  <defs><pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="4" height="1" fill="#000" opacity="0.35"/></pattern>
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="3"/>
+      <feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.06 0"/>
+    </filter></defs>
+  <rect width="432" height="216" fill="#0A0A0A"/>
+  <rect x="0.5" y="0.5" width="431" height="215" fill="none" stroke="#2A2825"/>
+  <text x="28" y="34" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'DejaVu Sans Mono','Liberation Mono',monospace" font-size="10.5" fill="#8C877C">node://pablozr/self-checkout-monolith</text>
+  <path d="M282,43.3 L288,46.3 L294,44.0 L300,44.0 L306,45.4 L312,50.7 L318,44.1 L324,44.3 L330,44.8 L336,45.0 L342,44.9 L348,42.2 L354,41.6 L360,43.2 L366,46.2 L372,46.2 L378,43.6 L384,45.5 L390,42.5 L396,43.4 L402,45.1" fill="none" stroke="#8C877C" stroke-width="1" opacity="0.7"/><circle r="3" fill="#C8102E"><animateMotion dur="5s" repeatCount="indefinite" path="M282,43.3 L288,46.3 L294,44.0 L300,44.0 L306,45.4 L312,50.7 L318,44.1 L324,44.3 L330,44.8 L336,45.0 L342,44.9 L348,42.2 L354,41.6 L360,43.2 L366,46.2 L372,46.2 L378,43.6 L384,45.5 L390,42.5 L396,43.4 L402,45.1"/></circle>
+  <text x="26" y="76" font-family="'Helvetica Neue',Helvetica,Arial,'Liberation Sans',sans-serif" font-size="22" fill="#E6E1D3" letter-spacing="1">self-checkout-monolith</text>
+  <text x="28" y="96" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'DejaVu Sans Mono','Liberation Mono',monospace" font-size="11" fill="#C8102E">autoatendimento por mesa</text>
+  <text x="28" y="118" font-family="'Helvetica Neue',Helvetica,Arial,'Liberation Sans',sans-serif" font-size="13.5" fill="#E6E1D3">Carrinho anônimo por mesa em Redis, checkout Stripe</text><text x="28" y="138" font-family="'Helvetica Neue',Helvetica,Arial,'Liberation Sans',sans-serif" font-size="13.5" fill="#E6E1D3">idempotente, reset de senha assíncrono com worker</text><text x="28" y="158" font-family="'Helvetica Neue',Helvetica,Arial,'Liberation Sans',sans-serif" font-size="13.5" fill="#E6E1D3">SMTP e cache por produto.</text>
+  <text x="28" y="194" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'DejaVu Sans Mono','Liberation Mono',monospace" font-size="10.5" fill="#8C877C" xml:space="preserve">[fastapi]  [redis]  [rabbitmq]  [stripe]</text>
+  <rect width="432" height="216" fill="url(#scan)"/>
+</svg>
