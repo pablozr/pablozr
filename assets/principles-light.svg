@@ -1,44 +1,43 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="298" viewBox="0 0 1000 298" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="399" viewBox="0 0 1000 399" fill="none">
 <style>
   .s { font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans',Helvetica,Arial,sans-serif; }
   .m { font-family: ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace; }
-  .scan { animation: scan 11s linear infinite; }
-  @keyframes scan { from { transform: translateX(0); } to { transform: translateX(840px); } }
-  @media (prefers-reduced-motion: reduce) { .scan { animation: none; opacity: 0; } }
 </style>
-<defs></defs>
-<text class="m" x="0" y="18" font-size="11" fill="#d9480f" letter-spacing="1">01</text>
-<text class="s" x="0" y="46" font-size="17" fill="#16181d" font-weight="600">Concurrency</text>
-<text class="s" x="0" y="76" font-size="14" fill="#5f6670">Concurrency only gets real when two</text>
-<text class="s" x="0" y="97" font-size="14" fill="#5f6670">people try to buy the last item at the</text>
-<text class="s" x="0" y="118" font-size="14" fill="#5f6670">same time. That can't be decided later:</text>
-<text class="s" x="0" y="139" font-size="14" fill="#5f6670">either there is an explicit lock and</text>
-<text class="s" x="0" y="160" font-size="14" fill="#5f6670">transaction, or the bug shows up in</text>
-<text class="s" x="0" y="181" font-size="14" fill="#5f6670">production on a Saturday.</text>
-<line x1="0" y1="215" x2="310" y2="215" stroke="#d0d7de" stroke-width="1" stroke-dasharray="2 3"/>
-<text class="m" x="0" y="237" font-size="12" fill="#16181d" xml:space="preserve">UPDATE stock SET qty = qty - 1</text>
-<text class="m" x="0" y="256" font-size="12" fill="#16181d" xml:space="preserve"> WHERE sku = $1 AND qty &gt; 0;</text>
-<text class="m" x="0" y="275" font-size="12" fill="#9aa1ab" xml:space="preserve">-- 0 rows: sold out</text>
-<line x1="327.5" y1="4" x2="327.5" y2="294" stroke="#d0d7de" stroke-width="1"/>
-<text class="m" x="345" y="18" font-size="11" fill="#d9480f" letter-spacing="1">02</text>
-<text class="s" x="345" y="46" font-size="17" fill="#16181d" font-weight="600">Domain</text>
-<text class="s" x="345" y="76" font-size="14" fill="#5f6670">I keep each business rule close to</text>
-<text class="s" x="345" y="97" font-size="14" fill="#5f6670">whoever understands it. Scattered across</text>
-<text class="s" x="345" y="118" font-size="14" fill="#5f6670">controllers, it turns into something</text>
-<text class="s" x="345" y="139" font-size="14" fill="#5f6670">nobody can explain, me included.</text>
-<text class="s" x="345" y="160" font-size="14" fill="#5f6670">Messaging follows the same logic:</text>
-<text class="s" x="345" y="181" font-size="14" fill="#5f6670">whoever publishes an event doesn't need</text>
-<text class="s" x="345" y="202" font-size="14" fill="#5f6670">to know who listens.</text>
-<line x1="345" y1="215" x2="655" y2="215" stroke="#d0d7de" stroke-width="1" stroke-dasharray="2 3"/>
-<text class="m" x="345" y="237" font-size="12" fill="#16181d" xml:space="preserve">await bus.publish("order.created", e)</text>
-<text class="m" x="345" y="256" font-size="12" fill="#9aa1ab" xml:space="preserve"># who listens is not my problem</text>
-<line x1="672.5" y1="4" x2="672.5" y2="294" stroke="#d0d7de" stroke-width="1"/>
-<text class="m" x="690" y="18" font-size="11" fill="#d9480f" letter-spacing="1">03</text>
-<text class="s" x="690" y="46" font-size="17" fill="#16181d" font-weight="600">Verification</text>
-<text class="s" x="690" y="76" font-size="14" fill="#5f6670">Agents write code faster than I can</text>
-<text class="s" x="690" y="97" font-size="14" fill="#5f6670">review it, and better prompts don't fix</text>
-<text class="s" x="690" y="118" font-size="14" fill="#5f6670">that. That's why I started JevGuard.</text>
-<line x1="690" y1="215" x2="1000" y2="215" stroke="#d0d7de" stroke-width="1" stroke-dasharray="2 3"/>
-<text class="m" x="690" y="237" font-size="12" fill="#16181d" xml:space="preserve">verdict = gate(diff, rules)</text>
-<text class="m" x="690" y="256" font-size="12" fill="#9aa1ab" xml:space="preserve"># PASS | WARN | FAIL, decided locally</text>
+<text class="m" x="0" y="22" font-size="14" fill="#d9480f" letter-spacing="1">01</text>
+<text class="s" x="0" y="56" font-size="22" fill="#16181d" font-weight="600">Concurrency</text>
+<text class="s" x="0" y="92" font-size="17.5" fill="#555c66">Concurrency only gets real when</text>
+<text class="s" x="0" y="119" font-size="17.5" fill="#555c66">two people try to buy the last</text>
+<text class="s" x="0" y="146" font-size="17.5" fill="#555c66">item at the same time. That can't</text>
+<text class="s" x="0" y="173" font-size="17.5" fill="#555c66">be decided later: either there is</text>
+<text class="s" x="0" y="200" font-size="17.5" fill="#555c66">an explicit lock and transaction,</text>
+<text class="s" x="0" y="227" font-size="17.5" fill="#555c66">or the bug shows up in production</text>
+<text class="s" x="0" y="254" font-size="17.5" fill="#555c66">on a Saturday.</text>
+<line x1="0" y1="302" x2="300" y2="302" stroke="#d0d7de" stroke-width="1" stroke-dasharray="2 3"/>
+<text class="m" x="0" y="328" font-size="14.5" fill="#16181d" xml:space="preserve">UPDATE stock SET qty = qty - 1</text>
+<text class="m" x="0" y="351" font-size="14.5" fill="#16181d" xml:space="preserve"> WHERE sku = $1 AND qty &gt; 0;</text>
+<text class="m" x="0" y="374" font-size="14.5" fill="#8c939d" xml:space="preserve">-- 0 rows: sold out</text>
+<line x1="325.0" y1="6" x2="325.0" y2="393" stroke="#d0d7de" stroke-width="1"/>
+<text class="m" x="350" y="22" font-size="14" fill="#d9480f" letter-spacing="1">02</text>
+<text class="s" x="350" y="56" font-size="22" fill="#16181d" font-weight="600">Domain</text>
+<text class="s" x="350" y="92" font-size="17.5" fill="#555c66">I keep each business rule close</text>
+<text class="s" x="350" y="119" font-size="17.5" fill="#555c66">to whoever understands it.</text>
+<text class="s" x="350" y="146" font-size="17.5" fill="#555c66">Scattered across controllers, it</text>
+<text class="s" x="350" y="173" font-size="17.5" fill="#555c66">turns into something nobody can</text>
+<text class="s" x="350" y="200" font-size="17.5" fill="#555c66">explain, me included. Messaging</text>
+<text class="s" x="350" y="227" font-size="17.5" fill="#555c66">follows the same logic: whoever</text>
+<text class="s" x="350" y="254" font-size="17.5" fill="#555c66">publishes an event doesn't need</text>
+<text class="s" x="350" y="281" font-size="17.5" fill="#555c66">to know who listens.</text>
+<line x1="350" y1="302" x2="650" y2="302" stroke="#d0d7de" stroke-width="1" stroke-dasharray="2 3"/>
+<text class="m" x="350" y="328" font-size="14.5" fill="#16181d" xml:space="preserve">bus.publish("order.created", e)</text>
+<text class="m" x="350" y="351" font-size="14.5" fill="#8c939d" xml:space="preserve"># who listens is not my problem</text>
+<line x1="675.0" y1="6" x2="675.0" y2="393" stroke="#d0d7de" stroke-width="1"/>
+<text class="m" x="700" y="22" font-size="14" fill="#d9480f" letter-spacing="1">03</text>
+<text class="s" x="700" y="56" font-size="22" fill="#16181d" font-weight="600">Verification</text>
+<text class="s" x="700" y="92" font-size="17.5" fill="#555c66">Agents write code faster than I</text>
+<text class="s" x="700" y="119" font-size="17.5" fill="#555c66">can review it, and better prompts</text>
+<text class="s" x="700" y="146" font-size="17.5" fill="#555c66">don't fix that. That's why I</text>
+<text class="s" x="700" y="173" font-size="17.5" fill="#555c66">started JevGuard.</text>
+<line x1="700" y1="302" x2="1000" y2="302" stroke="#d0d7de" stroke-width="1" stroke-dasharray="2 3"/>
+<text class="m" x="700" y="328" font-size="14.5" fill="#16181d" xml:space="preserve">verdict = gate(diff, rules)</text>
+<text class="m" x="700" y="351" font-size="14.5" fill="#8c939d" xml:space="preserve"># PASS | WARN | FAIL, local</text>
 </svg>

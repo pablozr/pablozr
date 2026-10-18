@@ -1,21 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="111" viewBox="0 0 1000 111" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="137" viewBox="0 0 1000 137" fill="none">
 <style>
   .s { font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans',Helvetica,Arial,sans-serif; }
   .m { font-family: ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace; }
-  .scan { animation: scan 11s linear infinite; }
-  @keyframes scan { from { transform: translateX(0); } to { transform: translateX(840px); } }
-  @media (prefers-reduced-motion: reduce) { .scan { animation: none; opacity: 0; } }
 </style>
-<defs></defs>
 <line x1="0" y1="0.5" x2="1000" y2="0.5" stroke="#d0d7de" stroke-width="1"/>
-<text class="m" x="0" y="32" font-size="11" fill="#d9480f" letter-spacing="1">06</text>
-<text class="s" x="40" y="34" font-size="19" fill="#16181d" font-weight="600" letter-spacing="-0.3">FastAPI-Template</text>
-<text class="m" x="40" y="56" font-size="11" fill="#9aa1ab">pablozr/FastAPI-Template <tspan fill="#d9480f">↗</tspan></text>
-<text class="s" x="330" y="32" font-size="14" fill="#5f6670">Production-ready API starter. Modular structure, per-environment</text>
-<text class="s" x="330" y="52" font-size="14" fill="#5f6670">configuration and a docker-compose setup ready to run.</text>
-<text class="m" x="1000" y="32" font-size="12" fill="#16181d" text-anchor="end">Python</text>
-<text class="m" x="1000" y="52" font-size="11" fill="#9aa1ab" text-anchor="end">fastapi</text>
-<text class="m" x="1000" y="69" font-size="11" fill="#9aa1ab" text-anchor="end">docker</text>
-<text class="m" x="1000" y="86" font-size="11" fill="#9aa1ab" text-anchor="end">postgresql</text>
-<line x1="0" y1="110.5" x2="1000" y2="110.5" stroke="#d0d7de" stroke-width="1"/>
+<text class="m" x="0" y="38" font-size="14" fill="#d9480f" letter-spacing="1">06</text>
+<text class="s" x="44" y="40" font-size="23" fill="#16181d" font-weight="600" letter-spacing="-0.4">FastAPI-Template</text>
+<text class="m" x="44" y="66" font-size="13" fill="#8c939d">pablozr/FastAPI-Template <tspan fill="#d9480f">↗</tspan></text>
+<text class="s" x="350" y="38" font-size="17" fill="#555c66">Production-ready API starter. Modular structure,</text>
+<text class="s" x="350" y="63" font-size="17" fill="#555c66">per-environment configuration and a docker-compose</text>
+<text class="s" x="350" y="88" font-size="17" fill="#555c66">setup ready to run.</text>
+<text class="m" x="1000" y="38" font-size="15" fill="#16181d" text-anchor="end">Python</text>
+<text class="m" x="1000" y="62" font-size="13.5" fill="#8c939d" text-anchor="end">fastapi</text>
+<text class="m" x="1000" y="83" font-size="13.5" fill="#8c939d" text-anchor="end">docker</text>
+<text class="m" x="1000" y="104" font-size="13.5" fill="#8c939d" text-anchor="end">postgresql</text>
+<line x1="0" y1="136.5" x2="1000" y2="136.5" stroke="#d0d7de" stroke-width="1"/>
 </svg>

@@ -5,14 +5,13 @@ Generates every SVG used by the profile README, in a dark and a light variant.
 Run:  python3 scripts/gen_assets.py     # writes to ./assets
 
 Direction: a technical datasheet. Transparent backgrounds, 1px rules, mono
-labels, one signal color used sparingly. The header figure is a WaveDrom-style
-timing diagram of the race the profile talks about: two requests, one item
-left, a row lock in between.
+labels, one signal color used sparingly. Every image is drawn on a 1000px wide
+canvas that GitHub scales down to about 830px, so font sizes here are set a
+little above the size they should read at.
 
 Constraints:
   - An SVG served through <img> cannot load webfonts: system font stacks only.
-  - GitHub strips <script> but keeps <style>; motion is CSS inside the file and
-    stops under prefers-reduced-motion.
+  - GitHub strips <script> but keeps <style>.
   - Brand icons come from simple-icons (CC0), vendored in scripts/icons.json,
     and are drawn in the text color, never in brand colors.
 """
@@ -28,16 +27,13 @@ MONO = "ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',m
 W = 1000
 
 THEMES = {
-    "dark": dict(fg="#e6e6e3", muted="#8b9098", faint="#5b616b", rule="#30363d", signal="#ff6a3d"),
-    "light": dict(fg="#16181d", muted="#5f6670", faint="#9aa1ab", rule="#d0d7de", signal="#d9480f"),
+    "dark": dict(fg="#e6e6e3", muted="#9aa0a8", faint="#646b75", rule="#30363d", signal="#ff6a3d"),
+    "light": dict(fg="#16181d", muted="#555c66", faint="#8c939d", rule="#d0d7de", signal="#d9480f"),
 }
 
 STYLE = """<style>
   .s { font-family: %s; }
   .m { font-family: %s; }
-  .scan { animation: scan 11s linear infinite; }
-  @keyframes scan { from { transform: translateX(0); } to { transform: translateX(840px); } }
-  @media (prefers-reduced-motion: reduce) { .scan { animation: none; opacity: 0; } }
 </style>""" % (SANS, MONO)
 
 
@@ -56,10 +52,10 @@ def wrap(text, n):
     return lines + [cur] if cur else lines
 
 
-def svg(w, h, body, extra_defs=""):
+def svg(w, h, body):
     return (
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" '
-        f'fill="none">\n{STYLE}\n<defs>{extra_defs}</defs>\n{body}\n</svg>\n'
+        f'fill="none">\n{STYLE}\n{body}\n</svg>\n'
     )
 
 
@@ -85,42 +81,23 @@ def icon(name, x, y, size, color):
     return f'<path transform="translate({x} {y}) scale({s})" fill="{color}" d="{ICONS[name]["path"]}"/>'
 
 
+def envelope(x, y, size, color):
+    s = size / 24
+    return (f'<g transform="translate({x} {y}) scale({s})" stroke="{color}" stroke-width="2" '
+            f'stroke-linejoin="round" fill="none"><rect x="2" y="4.5" width="20" height="15" rx="1.5"/>'
+            f'<path d="M3 6l9 7 9-7"/></g>')
+
+
 # ---------------------------------------------------------------- header
-U, X0 = 70, 120  # one time slot in px, x of t0
-
-
-def tx(slot):
-    return X0 + slot * U
-
-
-def bus(a, b, yc, label, t, hatch=False, color="fg"):
-    """A WaveDrom bus segment between slots a and b."""
-    x1, x2, h, s = tx(a), tx(b), 10, 5
-    pts = f"{x1},{yc} {x1 + s},{yc - h} {x2 - s},{yc - h} {x2},{yc} {x2 - s},{yc + h} {x1 + s},{yc + h}"
-    fill = 'fill="url(#hatch)"' if hatch else 'fill="none"'
-    out = f'<polygon points="{pts}" {fill} stroke="{t[color] if color != "fg" else t["faint"]}" stroke-width="1"/>'
-    if label:
-        out += text((x1 + x2) / 2, yc + 4, label, t, 11, color if color != "fg" else "fg", "m", "middle")
-    return out
-
-
-def idle(a, b, yc, t):
-    return hline(tx(a), tx(b), yc, t, "faint", "2 3")
-
-
 def header(t):
-    h = 452
-    lanes = {"T1": 268, "T2": 308, "row lock": 348, "stock": 388}
     p = []
-    # meta row
-    p.append(text(0, 16, "PF-01 · PROFILE · REV. 2026.10", t, 11, "muted", "m", ls=1.5))
-    p.append(text(W, 16, "RIO DE JANEIRO  22.9068°S  43.1729°W", t, 11, "muted", "m", "end", ls=1.5))
-    p.append(hline(0, W, 30, t))
-    # identity
-    p.append(text(-3, 108, "Pablo Farina", t, 62, "fg", "s", weight=600, ls=-2.5))
-    p.append(text(0, 146, "Backend engineer.", t, 17, "fg", "s", weight=500))
-    p.append(text(0, 172, "Concurrency, architecture and coding-agent verification.", t, 17, "muted", "s"))
-    # spec block with leaders
+    p.append(text(0, 18, "PF-01 · PROFILE · REV. 2026.10", t, 13, "muted", "m", ls=1.5))
+    p.append(text(W, 18, "RIO DE JANEIRO  22.9068°S  43.1729°W", t, 13, "muted", "m", "end", ls=1.5))
+    p.append(hline(0, W, 34, t))
+    p.append(text(-4, 122, "Pablo Farina", t, 74, "fg", "s", weight=600, ls=-3))
+    p.append(text(0, 166, "Backend engineer.", t, 21, "fg", "s", weight=500))
+    p.append(text(0, 196, "Concurrency, architecture and", t, 21, "muted", "s"))
+    p.append(text(0, 224, "coding-agent verification.", t, 21, "muted", "s"))
     spec = [
         ("role", "backend engineer"),
         ("at", "bagaggio · dev intern"),
@@ -128,77 +105,45 @@ def header(t):
         ("shipped", "200+ stores · 10+ projects"),
         ("commits", "605 in 12 mo · 21 repos"),
     ]
-    sx = 640
+    sx = 570
     for i, (k, v) in enumerate(spec):
-        y = 70 + i * 24
-        p.append(text(sx, y, k, t, 12, "muted", "m"))
-        kw, vw = len(k) * 7.25, len(v) * 7.25
-        p.append(hline(sx + kw + 8, W - vw - 8, y - 3, t, "faint", "1 3"))
-        p.append(text(W, y, v, t, 12, "fg", "m", "end"))
-    p.append(hline(0, W, 206, t))
-    # figure
-    p.append(text(0, 230, "FIG. 1", t, 11, "signal", "m", ls=1.5))
-    p.append(text(56, 230, "two requests, one item left", t, 11, "muted", "m", ls=.5))
-    p.append(text(W, 230, "postgres · read committed", t, 11, "muted", "m", "end", ls=.5))
-    # clock ticks
-    for i in range(13):
-        x = tx(i)
-        p.append(f'<line x1="{x}" y1="244" x2="{x}" y2="{252 if i % 2 == 0 else 249}" stroke="{t["faint"]}"/>')
-        p.append(vline(x, 256, 404, t, "rule").replace('stroke-width="1"', 'stroke-width="1" stroke-dasharray="1 5"'))
-        if i % 2 == 0 and i < 12:
-            p.append(text(x + 3, 252, f"t{i}", t, 9, "faint", "m"))
-    for name, y in lanes.items():
-        p.append(text(X0 - 20, y + 4, name, t, 12, "muted", "m", "end"))
-    # T1
-    y = lanes["T1"]
-    p += [bus(0, 1, y, "BEGIN", t), bus(1, 4, y, "SELECT … FOR UPDATE", t),
-          bus(4, 6, y, "UPDATE qty = 0", t), bus(6, 7, y, "COMMIT", t), idle(7, 12, y, t)]
-    # T2
-    y = lanes["T2"]
-    p += [idle(0, 1, y, t), bus(1, 2, y, "BEGIN", t), bus(2, 7, y, "", t, hatch=True),
-          text((tx(2) + tx(7)) / 2, y + 4, "UPDATE … blocked on row lock", t, 11, "muted", "m", "middle"),
-          bus(7, 9, y, "0 rows → sold out", t, color="signal"), bus(9, 10, y, "END", t), idle(10, 12, y, t)]
-    # lock signal
-    y = lanes["row lock"]
-    lo, hi = y + 9, y - 9
-    p.append(
-        f'<polyline points="{tx(0)},{lo} {tx(1)},{lo} {tx(1) + 4},{hi} {tx(7)},{hi} {tx(7) + 4},{lo} {tx(12)},{lo}" '
-        f'stroke="{t["signal"]}" stroke-width="1.5" fill="none"/>'
-    )
-    p.append(text(tx(1) + 10, hi - 5, "held by T1", t, 10, "signal", "m"))
-    # stock
-    y = lanes["stock"]
-    p += [bus(0, 7, y, "1", t), bus(7, 12, y, "0", t)]
-    # playhead
-    p.append(
-        f'<g class="scan"><line x1="{X0}" y1="240" x2="{X0}" y2="404" stroke="{t["signal"]}" '
-        f'stroke-width="1" opacity=".7"/><path d="M{X0 - 4} 240h8l-4 6z" fill="{t["signal"]}"/></g>'
-    )
-    p.append(hline(0, W, 420, t))
-    p.append(text(0, 440, "T2 waits for T1's commit, then its guarded UPDATE matches 0 rows. No oversell, "
-                          "no retry loop.", t, 11, "muted", "m"))
-    hatch = (f'<pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" '
-             f'patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="{t["rule"]}" '
-             f'stroke-width="2"/></pattern>')
-    return svg(W, h, "\n".join(p), hatch)
+        y = 82 + i * 34
+        p.append(text(sx, y, k, t, 15, "muted", "m"))
+        kw, vw = len(k) * 9.05, len(v) * 9.05
+        p.append(hline(sx + kw + 10, W - vw - 10, y - 4, t, "faint", "1 4"))
+        p.append(text(W, y, v, t, 15, "fg", "m", "end"))
+    p.append(hline(0, W, 252, t))
+    return svg(W, 256, "\n".join(p))
+
+
+# ---------------------------------------------------------------- social buttons
+SOCIAL = {
+    "linkedin": ("LinkedIn", "in/pablo-de-araujo-farina"),
+    "email": ("Email", "pablo.farina28@outlook.com"),
+    "github": ("GitHub", "github.com/pablozr"),
+}
+
+
+def social(kind, t):
+    w, h = 340, 76
+    title, sub = SOCIAL[kind]
+    ic = envelope(22, 25, 26, t["fg"]) if kind == "email" else icon(kind, 22, 25, 26, t["fg"])
+    p = [f'<rect x=".5" y=".5" width="{w - 1}" height="{h - 1}" rx="3" stroke="{t["rule"]}" stroke-width="1"/>',
+         f'<rect x=".5" y=".5" width="3" height="{h - 1}" fill="{t["signal"]}"/>',
+         ic,
+         text(66, 34, title, t, 19, "fg", "s", weight=600),
+         text(66, 56, sub, t, 13.5, "muted", "m"),
+         text(w - 18, 45, "↗", t, 20, "signal", "m", "end")]
+    return svg(w, h, "\n".join(p))
 
 
 # ---------------------------------------------------------------- section heading
 def heading(num, title, note, t):
-    h = 44
-    p = [text(0, 26, f"§{num:02d}", t, 12, "signal", "m", ls=1),
-         text(44, 27, title, t, 19, "fg", "s", weight=600, ls=-.3),
-         text(W, 26, note, t, 11, "muted", "m", "end", ls=.5),
-         hline(0, W, 40, t)]
-    return svg(W, h, "\n".join(p))
-
-
-# ---------------------------------------------------------------- contact link
-def link(label, t):
-    w, h = int(len(label) * 7.8) + 18, 24
-    p = [text(0, 16, label, t, 13, "fg", "m"),
-         text(w, 16, "↗", t, 13, "signal", "m", "end")]
-    return svg(w, h, "\n".join(p))
+    p = [text(0, 32, f"§{num:02d}", t, 15, "signal", "m", ls=1),
+         text(56, 33, title, t, 25, "fg", "s", weight=600, ls=-.4),
+         text(W, 32, note, t, 14, "muted", "m", "end", ls=.5),
+         hline(0, W, 50, t)]
+    return svg(W, 54, "\n".join(p))
 
 
 # ---------------------------------------------------------------- principles
@@ -212,33 +157,34 @@ PRINCIPLES = [
      "I keep each business rule close to whoever understands it. Scattered across "
      "controllers, it turns into something nobody can explain, me included. Messaging "
      "follows the same logic: whoever publishes an event doesn't need to know who listens.",
-     ['await bus.publish("order.created", e)', "# who listens is not my problem"]),
+     ['bus.publish("order.created", e)', "# who listens is not my problem"]),
     ("Verification",
      "Agents write code faster than I can review it, and better prompts don't fix that. "
      "That's why I started JevGuard.",
-     ["verdict = gate(diff, rules)", "# PASS | WARN | FAIL, decided locally"]),
+     ["verdict = gate(diff, rules)", "# PASS | WARN | FAIL, local"]),
 ]
 
 
 def principles(t):
-    cw, gap = 310, 35
-    texts = [wrap(d, 40) for _, d, _ in PRINCIPLES]
-    body_h = max(len(x) for x in texts) * 21
-    code_y = 76 + body_h + 8
-    h = code_y + 3 * 19 + 10
+    cw, gap = 300, 50
+    texts = [wrap(d, 33) for _, d, _ in PRINCIPLES]
+    lh = 27
+    body_h = max(len(x) for x in texts) * lh
+    code_y = 92 + body_h + 14
+    h = code_y + 3 * 23 + 8
     p = []
     for i, ((title, _, code), lines) in enumerate(zip(PRINCIPLES, texts)):
         x = i * (cw + gap)
         if i:
-            p.append(vline(x - gap / 2, 4, h - 4, t))
-        p.append(text(x, 18, f"{i + 1:02d}", t, 11, "signal", "m", ls=1))
-        p.append(text(x, 46, title, t, 17, "fg", "s", weight=600))
+            p.append(vline(x - gap / 2, 6, h - 6, t))
+        p.append(text(x, 22, f"{i + 1:02d}", t, 14, "signal", "m", ls=1))
+        p.append(text(x, 56, title, t, 22, "fg", "s", weight=600))
         for j, l in enumerate(lines):
-            p.append(text(x, 76 + j * 21, l, t, 14, "muted", "s"))
-        p.append(hline(x, x + cw, code_y - 16, t, "rule", "2 3"))
+            p.append(text(x, 92 + j * lh, l, t, 17.5, "muted", "s"))
+        p.append(hline(x, x + cw, code_y - 20, t, "rule", "2 3"))
         for j, c in enumerate(code):
             color = "faint" if c.lstrip().startswith(("#", "--")) else "fg"
-            p.append(f'<text class="m" x="{x}" y="{code_y + 6 + j * 19}" font-size="12" fill="{t[color]}" '
+            p.append(f'<text class="m" x="{x}" y="{code_y + 6 + j * 23}" font-size="14.5" fill="{t[color]}" '
                      f'xml:space="preserve">{esc(c)}</text>')
     return svg(W, h, "\n".join(p))
 
@@ -268,18 +214,19 @@ PROJECTS = [
 
 def project(i, proj, t, last):
     _, name, desc, lang, tags = proj
-    lines = wrap(desc, 64)
-    h = max(92, 34 + len(lines) * 20)
+    lines = wrap(desc, 50)
+    tags = tags.split(" · ")
+    lh = 25
+    h = max(40 + len(lines) * lh, 64 + len(tags) * 21) + 10
     p = [hline(0, W, .5, t)]
-    p.append(text(0, 32, f"{i + 1:02d}", t, 11, "signal", "m", ls=1))
-    p.append(text(40, 34, name, t, 19, "fg", "s", weight=600, ls=-.3))
-    p.append(text(40, 56, f"pablozr/{name} <tspan fill=\"{t['signal']}\">↗</tspan>", t, 11, "faint", "m", raw=True))
+    p.append(text(0, 38, f"{i + 1:02d}", t, 14, "signal", "m", ls=1))
+    p.append(text(44, 40, name, t, 23, "fg", "s", weight=600, ls=-.4))
+    p.append(text(44, 66, f"pablozr/{name} <tspan fill=\"{t['signal']}\">↗</tspan>", t, 13, "faint", "m", raw=True))
     for j, l in enumerate(lines):
-        p.append(text(330, 32 + j * 20, l, t, 14, "muted", "s"))
-    p.append(text(W, 32, lang, t, 12, "fg", "m", "end"))
-    for j, tag in enumerate(tags.split(" · ")):
-        p.append(text(W, 52 + j * 17, tag, t, 11, "faint", "m", "end"))
-    h = max(h, 52 + len(tags.split(" · ")) * 17 + 8)
+        p.append(text(350, 38 + j * lh, l, t, 17, "muted", "s"))
+    p.append(text(W, 38, lang, t, 15, "fg", "m", "end"))
+    for j, tag in enumerate(tags):
+        p.append(text(W, 62 + j * 21, tag, t, 13.5, "faint", "m", "end"))
     if last:
         p.append(hline(0, W, h - .5, t))
     return svg(W, h, "\n".join(p))
@@ -292,46 +239,47 @@ STACK = [
     ("data & infra", ["postgresql", "mongodb", "redis", "rabbitmq", "docker", "bun"]),
 ]
 TITLES = {"java": "Java"}
-ALSO = "REST APIs · ERP integration · WebRTC · SSO · Server Actions · Phaser · unit tests with Bun"
+ALSO = ["REST APIs", "ERP integration", "WebRTC", "SSO", "Server Actions", "Phaser",
+        "unit tests with Bun"]
 LANGS = [("TypeScript", 49.8), ("Python", 20.7), ("Java", 8.4), ("HTML", 6.6), ("SCSS", 5.6),
          ("JavaScript", 4.3), ("CSS", 3.7), ("other", 0.9)]
 
 
 def stack(t):
-    cw = 230
+    cw, gap = 210, 24
     p = []
     for c, (label, items) in enumerate(STACK):
-        x = c * (cw + 20)
-        p.append(text(x, 14, label.upper(), t, 11, "muted", "m", ls=1.5))
-        p.append(hline(x, x + cw, 26, t))
+        x = c * (cw + gap)
+        p.append(text(x, 16, label.upper(), t, 13, "muted", "m", ls=1.5))
+        p.append(hline(x, x + cw, 30, t))
         for i, k in enumerate(items):
-            y = 54 + i * 30
-            p.append(icon(k, x, y - 13, 15, t["fg"]))
-            p.append(text(x + 26, y, TITLES.get(k, ICONS[k]["title"]), t, 14, "fg", "s"))
-    # languages column
-    x = 3 * (cw + 20)
+            y = 66 + i * 36
+            p.append(icon(k, x, y - 16, 19, t["fg"]))
+            p.append(text(x + 32, y, TITLES.get(k, ICONS[k]["title"]), t, 18, "fg", "s"))
+    x = 3 * (cw + gap)
     lw = W - x
-    p.append(text(x, 14, "LANGUAGES · 42 REPOS", t, 11, "muted", "m", ls=1.5))
-    p.append(hline(x, W, 26, t))
+    p.append(text(x, 16, "LANGUAGES · 42 REPOS", t, 13, "muted", "m", ls=1.5))
+    p.append(hline(x, W, 30, t))
     for i, (name, pct) in enumerate(LANGS):
-        y = 50 + i * 22
-        p.append(text(x, y, name, t, 12, "fg" if i == 0 else "muted", "m"))
-        p.append(text(W, y, f"{pct:.1f}", t, 12, "fg" if i == 0 else "muted", "m", "end"))
-        bw = (lw - 130) * pct / LANGS[0][1]
-        p.append(hline(x + 92, x + 92 + max(bw, 1), y - 4, t, "signal" if i == 0 else "faint"))
-    y = 54 + 6 * 30 + 8
+        y = 58 + i * 26.5
+        top = i == 0
+        p.append(text(x, y, name, t, 14, "fg" if top else "muted", "m"))
+        p.append(text(W, y, f"{pct:.1f}", t, 14, "fg" if top else "muted", "m", "end"))
+        bw = (lw - 152) * pct / LANGS[0][1]
+        p.append(hline(x + 100, x + 100 + max(bw, 1), y - 5, t, "signal" if top else "faint"))
+    y = 66 + 6 * 36
     p.append(hline(0, W, y, t, "rule", "2 3"))
-    p.append(text(0, y + 26, "ALSO", t, 11, "muted", "m", ls=1.5))
-    p.append(text(60, y + 26, ALSO, t, 13, "fg", "s"))
-    return svg(W, y + 36, "\n".join(p))
+    p.append(text(0, y + 34, "ALSO", t, 13, "muted", "m", ls=1.5))
+    p.append(text(64, y + 34, " · ".join(ALSO), t, 17, "fg", "s"))
+    return svg(W, y + 64, "\n".join(p))
 
 
 # ---------------------------------------------------------------- footer
 def footer(t):
-    p = [hline(0, W, 12, t),
-         text(0, 40, "close the world, open the nExt", t, 12, "muted", "m", ls=1),
-         text(W, 40, "EOF", t, 12, "signal", "m", "end", ls=1.5)]
-    return svg(W, 52, "\n".join(p))
+    p = [hline(0, W, 14, t),
+         text(0, 46, "close the world, open the nExt", t, 14, "muted", "m", ls=1),
+         text(W, 46, "EOF", t, 14, "signal", "m", "end", ls=1.5)]
+    return svg(W, 58, "\n".join(p))
 
 
 SECTIONS = [
@@ -352,10 +300,9 @@ def main():
             f"principles-{mode}.svg": principles(t),
             f"stack-{mode}.svg": stack(t),
             f"footer-{mode}.svg": footer(t),
-            f"contact/linkedin-{mode}.svg": link("linkedin", t),
-            f"contact/email-{mode}.svg": link("pablo.farina28@outlook.com", t),
-            f"contact/github-{mode}.svg": link("github", t),
         }
+        for kind in SOCIAL:
+            files[f"contact/{kind}-{mode}.svg"] = social(kind, t)
         for key, num, title, note in SECTIONS:
             files[f"sections/{key}-{mode}.svg"] = heading(num, title, note, t)
         for i, proj in enumerate(PROJECTS):

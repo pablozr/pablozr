@@ -1,9 +1,9 @@
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/header-dark.svg"><img alt="Pablo Farina. Backend engineer: concurrency, architecture and coding-agent verification. Dev intern at Bagaggio, Information Systems at UNIRIO, Rio de Janeiro. 200+ stores and 10+ projects shipped, 605 commits in 12 months across 21 repositories. Figure 1: a timing diagram of two transactions racing for the last item in stock; T2 waits on the row lock held by T1 and its guarded UPDATE matches 0 rows, so nothing is oversold." src="assets/header-light.svg" width="100%"></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/header-dark.svg"><img alt="Pablo Farina. Backend engineer: concurrency, architecture and coding-agent verification. Dev intern at Bagaggio, Information Systems at UNIRIO, Rio de Janeiro. 200+ stores and 10+ projects shipped, 605 commits in 12 months across 21 repositories." src="assets/header-light.svg" width="100%"></picture>
 
-<p>
-  <a href="https://www.linkedin.com/in/pablo-de-araujo-farina-893a8126b"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/contact/linkedin-dark.svg"><img alt="LinkedIn" src="assets/contact/linkedin-light.svg" height="24"></picture></a>&emsp;
-  <a href="mailto:pablo.farina28@outlook.com"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/contact/email-dark.svg"><img alt="Email: pablo.farina28@outlook.com" src="assets/contact/email-light.svg" height="24"></picture></a>&emsp;
-  <a href="https://github.com/pablozr"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/contact/github-dark.svg"><img alt="GitHub" src="assets/contact/github-light.svg" height="24"></picture></a>
+<p align="center">
+  <a href="https://www.linkedin.com/in/pablo-de-araujo-farina-893a8126b"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/contact/linkedin-dark.svg"><img alt="LinkedIn: in/pablo-de-araujo-farina" src="assets/contact/linkedin-light.svg" width="32%"></picture></a>
+  <a href="mailto:pablo.farina28@outlook.com"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/contact/email-dark.svg"><img alt="Email: pablo.farina28@outlook.com" src="assets/contact/email-light.svg" width="32%"></picture></a>
+  <a href="https://github.com/pablozr"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/contact/github-dark.svg"><img alt="GitHub: github.com/pablozr" src="assets/contact/github-light.svg" width="32%"></picture></a>
 </p>
 
 <br>

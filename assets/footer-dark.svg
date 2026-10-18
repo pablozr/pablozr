@@ -1,13 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="52" viewBox="0 0 1000 52" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="58" viewBox="0 0 1000 58" fill="none">
 <style>
   .s { font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans',Helvetica,Arial,sans-serif; }
   .m { font-family: ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace; }
-  .scan { animation: scan 11s linear infinite; }
-  @keyframes scan { from { transform: translateX(0); } to { transform: translateX(840px); } }
-  @media (prefers-reduced-motion: reduce) { .scan { animation: none; opacity: 0; } }
 </style>
-<defs></defs>
-<line x1="0" y1="12" x2="1000" y2="12" stroke="#30363d" stroke-width="1"/>
-<text class="m" x="0" y="40" font-size="12" fill="#8b9098" letter-spacing="1">close the world, open the nExt</text>
-<text class="m" x="1000" y="40" font-size="12" fill="#ff6a3d" text-anchor="end" letter-spacing="1.5">EOF</text>
+<line x1="0" y1="14" x2="1000" y2="14" stroke="#30363d" stroke-width="1"/>
+<text class="m" x="0" y="46" font-size="14" fill="#9aa0a8" letter-spacing="1">close the world, open the nExt</text>
+<text class="m" x="1000" y="46" font-size="14" fill="#ff6a3d" text-anchor="end" letter-spacing="1.5">EOF</text>
 </svg>
