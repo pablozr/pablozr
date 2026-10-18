@@ -197,9 +197,10 @@ PROJECTS = [
     ("xemnas", "xemnas", "Engineering-decision memory for coding agents. A local desktop app that "
      "turns the decisions made in agent sessions into a versioned, evidence-backed project memory "
      "and feeds it back to the agent as context.", "Rust", "gpui · sqlite · mcp"),
-    ("prisma", "PRISMA", "Academic platform for UNIRIO. Projects imported from SIE, institutional "
-     "sign-in with Google, access and refresh tokens in Redis, semantic recommendations on top of "
-     "search.", "Python", "fastapi · redis · rag"),
+    ("prisma", "PRISMA", "Academic projects catalog for UNIRIO. A worker syncs projects and "
+     "participants from SIE every 15 days; the API serves a public catalog, lets professors "
+     "curate their projects and gives admins publication control and sync history.",
+     "Python", "fastapi · postgresql · redis"),
     ("self-checkout", "self-checkout-monolith", "Table-side self-checkout. Anonymous per-table "
      "cart in Redis, idempotent Stripe checkout, async password reset with an SMTP worker, "
      "per-product caching.", "Python", "fastapi · redis · rabbitmq · stripe"),
