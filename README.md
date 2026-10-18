@@ -28,6 +28,7 @@ Interesses: backend com FastAPI, async e arquitetura orientada a eventos · conc
 | Projeto | O que é | Stack |
 | --- | --- | --- |
 | [**JevGuard**](https://github.com/pablozr/JevGuard) | Motor de política semântica para coding agents. Verifica o diff que um agente acabou de produzir contra as políticas do repositório e devolve PASS, WARN ou FAIL por regra. | TypeScript · CLI |
+| [**xemnas**](https://github.com/pablozr/xemnas) | Memória de decisões de engenharia para coding agents. App desktop local que transforma as decisões tomadas nas sessões do agente em memória versionada e com evidências, e devolve essa memória ao agente como contexto. | Rust · GPUI · SQLite · MCP |
 | [**PRISMA**](https://github.com/pablozr/PRISMA) | Plataforma acadêmica da UNIRIO. Projetos importados do SIE, login institucional via Google, tokens em Redis e recomendação semântica na busca. | Python · FastAPI · Redis · RAG |
 | [**self-checkout-monolith**](https://github.com/pablozr/self-checkout-monolith) | Autoatendimento por mesa. Carrinho anônimo em Redis, checkout Stripe idempotente, reset de senha assíncrono com worker SMTP e cache por produto. | FastAPI · Redis · RabbitMQ · Stripe |
 | [**subscription-monolith**](https://github.com/pablozr/subscription-monolith) | Gestão de assinaturas. Regras separadas por domínio, persistência relacional e comunicação assíncrona entre os serviços. | FastAPI · PostgreSQL · RabbitMQ |
